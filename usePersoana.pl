@@ -4,8 +4,10 @@
 #Author: Mihai Cornel
 #File: usePerson.plx
 
+# Pragmas ----
 use warnings;
 use strict;
+
 use Persoana;
 
 my $persoana = Person->new(
