@@ -1,0 +1,6 @@
+Revision history for Perl extension Person::CNPclass.
+
+0.01  Thu Oct 22 06:37:36 2015
+	- original version; created by h2xs 1.23 with options
+		-XAn Person::CNPclass
+

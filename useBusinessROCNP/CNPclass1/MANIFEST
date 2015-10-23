@@ -1,0 +1,6 @@
+Changes
+Makefile.PL
+MANIFEST
+README
+t/CNPclass1.t
+lib/CNPclass1.pm

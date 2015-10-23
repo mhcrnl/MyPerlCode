@@ -7,19 +7,19 @@ Dosarul **FooModule** contine doua file:
 
 In fila **Foo.pm** sunt definite subrutinele Perl, mai jos aveti un exemplu de subrutina:
 
-'''perl
+```perl
 
     sub scadere {
 	   my ($x,$y)=@_;
 	   return $x-$y;
     }
-'''
+```
 
 Fila **useFoo.pl** este fila Perl care utilizeaza subrutinele din fila modul **Foo.pm**. Un exemplu de utilizare al unei subrutine este mai jos:
 
-'''perl
+```perl
     print Foo::scadere(-90,45)."\n";
-'''
+```
 
 Un exemplu de utilizare il aveti in aceasta imagine:
 ![img1.png](img1.png)
