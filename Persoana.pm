@@ -4,6 +4,7 @@ package Person;
 #Author: Mihai Cornel
 #File: Persoana.pm
 
+# Pragmas
 use warnings;
 use strict;
 use Carp;
