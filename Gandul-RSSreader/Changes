@@ -1,0 +1,6 @@
+Revision history for Perl extension Gandul::RSSreader.
+
+0.01  Fri Oct 23 21:27:12 2015
+	- original version; created by h2xs 1.23 with options
+		-Afn Gandul::RSSreader
+
