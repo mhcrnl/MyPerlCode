@@ -18,6 +18,7 @@ use Carp;
 #our @EXPORT = qw(	);
 #THIS IS NO NEEDED-------------------------------------------------------END
 our $VERSION = '0.01';
+
 #Class for storing data about a person:
 #	nume	Methods: getNume()	setNume()
 #	prenume	Methods: getPrenume()	setPrenume()
@@ -41,6 +42,7 @@ sub new {
 		_prenume=> shift,
 		_cnp	=> shift,
 		_nrTel	=> shift,
+		_email	=> shift,
 		};		# hash referance
 	bless ($self, $class);	# Transformarea referintei in obiect
 	$self->_init;
@@ -112,6 +114,19 @@ sub setNrTel {
 	return $self->{_nrTel};
 }
 
+sub getEmail {
+	my $self = shift;
+	unless (ref $self) {
+		croak "Should call getEmail() with an object, not a class";
+	}
+	return $self->{_email};
+}
+
+sub setEmail {
+	my($self, $email) =@_;
+	$self->{_email} = $email if defined ($email);
+	return $self->{_email};
+}
 
 sub afiseazaVersion {
 	#print getNume()." ".getPrenume()."\n";
@@ -124,21 +139,52 @@ __END__
 
 =head1 NAME
 
-Person::CNPclass - Perl extension for blah blah blah
+Person::CNPclass is a class for storing data about a Person
 
 =head1 SYNOPSIS
 
-  use Person::CNPclass;
-  blah blah blah
+  #!/usr/bin/perl
+
+	# Pragmas----------
+	use warnings;
+	use strict;
+	# Utilizarea clasei CNPclass1 din Fila: CNPclass1.pm
+	use lib '/home/mhcrnl/MyPerlCode/Person-CNPclass/lib/Person';
+	use CNPclass;
+
+	my $myCNP = new Person::CNPclass("Mihai", "Cornel", "1750878909876", "0722196164");
+	
+	print $myCNP->getNume()."\n";	
+	print $myCNP->getPrenume()."\n";
+	print $myCNP->getCNP()."\n";
+
+	$myCNP->setNume("Irina");
+	$myCNP->afiseazaVersion();
+
+	print $myCNP->getNume()."\t"."\n";
+	print "Nume/Prenume: ".$myCNP->getNume()." ".$myCNP->getPrenume()."\n";
+	print "Numar de Telefon: ".$myCNP->getNrTel();
+  
+  
+More  examples in folder t
 
 =head1 DESCRIPTION
 
-Stub documentation for Person::CNPclass, created by h2xs. It looks like the
-author of the extension was negligent enough to leave the stub
-unedited.
-
-Blah blah blah.
-
+Stub documentation for Person::CNPclass, created by h2xs.
+This module is a class and is use as it is.
+=head2 METHODS
+getNume()
+setNume()
+getPrenume()
+setPrenume()
+getCNP()
+setCNP()
+getNrTel()
+setNrTel()
+=head1 ATENTION!!! Insert email with escape character:
+	mhcrnl\@gmail.com	
+getEmail()
+setEmail	
 =head2 EXPORT
 
 None by default.
