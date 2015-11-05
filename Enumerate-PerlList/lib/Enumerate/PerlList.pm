@@ -1,51 +1,29 @@
-package Romanian::Person;
+package Enumerate::PerlList;
 
 use 5.006;
 use strict;
-use warnings FATAL => 'all';
-
+use warnings;
+use Exporter;
 =head1 NAME
 
-Romanian::Person - The great new Romanian::Person!
-
+Enumerate::PerlList - The great new Enumerate::PerlList!
+Provide List Enumeration this is code from SPURIN.
+Original at List::Enumerate
+	
 =head1 VERSION
 
-<<<<<<< HEAD
-Version 0.01
+Version 0.02
 
 =cut
 
-our $VERSION = '0.01_01';
-=======
-Version 0.01_02
+our $VERSION 	= '0.02';
+our $ISA	=qw(Exporter);
+our @EXPORT	=qw(enumerate);
 
-=cut
-
-our $VERSION = '0.01_02';
->>>>>>> 054b9bec6fc123a4b39e463d3ad736c5d5a7e1fb
-#---------------------------------------------------------------------------
-#	Call the _run() method if the module was called as a script
-#---------------------------------------------------------------------------
-__PACKAGE__->_run unless caller();
-#----------------------------------------------------------------------------
-#	The Constructor
-#----------------------------------------------------------------------------
-sub new {
-	my $class = shift;
-	my $self = {
-		_firstName	=>	shift,
-		_lastName	=>	shift,
-	};
-	#--------------------------------------------------------------------
-	#	For clarification print all the values.
-	#--------------------------------------------------------------------
-	print "First Name is $self->{_firstName}\n";
-	print "Last Name is $self->{_lastName}\n";
-	bless $self, $class;
-	return $self;
-	
-}
-
+#-----------------------------------------------------------------------
+# Call the run method if the module was called as a script
+#----------------------------------------------------------------------
+__PACKAGE__->_run unless caller(); 
 
 =head1 SYNOPSIS
 
@@ -53,53 +31,94 @@ Quick summary of what the module does.
 
 Perhaps a little code snippet.
 
-    use Romanian::Person;
+    use Enumerate::PerlList;
 
-    my $object = Romanian::Person->new("Mihai", "Cornel");
+    my $foo = Enumerate::PerlList->new();
     ...
+
+=head1 EXPORT
+
+A list of functions that can be exported.  You can delete this section
+if you don't export anything, such as for a purely object-oriented module.
 
 =head1 SUBROUTINES/METHODS
 
-=head2 getFirstName()
+=head2 Constructor new
+
+This is the constructor for class.
 
 =cut
 
-sub getFirstName {
-	my $self = shift;
-	return $self->{_firstName};
+sub new {
+	my $class = shift;
+	return bless [@_], $class;
 }
 
-=head2 getLastName()
+=head2 Method index
+
+	The index position
+	
+=cut
+
+sub index { return $_[0]->[0] }
+
+=head2 Method item
 
 =cut
 
-sub getLastName {
-	my $self = shift;
-	return $self->{_lastName};
+sub item {return $_[0]->[1] }
+
+=head2 Method enumarate
+
+=cut
+
+sub enumerate {
+	my $count =0;
+	my @list;
+	for my $entry (@_){
+		push @list, Enumerate::PerlList->new( $count, $entry);
+		$count++;
+	}
+	return @list;
 }
 
-=head2 _run()
+=head2 Method run
 
-This is an example of use module.
+This is for testing subrutine
 
+Output
+	0 Cornel
+	1 Andrei
+	2 Florin
+	0 Cornel
+	1 Andrei
+	2 Florin
+	
+	
 =cut
-#----------------------------------------------------------------
-#	Method for run of this code.
-#------------------------------------------------------------------
+
 sub _run {
-	my $object = new Romanian::Person("Mihai", "Cornel");
-	print $object->getFirstName, "\n";
-	print $object->getLastName, "\n";		
+	my @list=qw(Cornel Andrei Florin);
+	# With enumarete
+	for my $name (enumerate(@list)){
+		print $name->index, " " ,$name->item, "\n";
+	}
+	#Without enumarete
+	my $index =0;
+	for my $name(@list) {
+		print $index," ",$name, "\n";
+		$index++;
+	}
 }
-
+	
 =head1 AUTHOR
 
 Mihai Cornel, C<< <mhcrnl at gmail.com> >>
 
 =head1 BUGS
 
-Please report any bugs or feature requests to C<bug-romanian-person at rt.cpan.org>, or through
-the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Romanian-Person>.  I will be notified, and then you'll
+Please report any bugs or feature requests to C<bug-enumerate-perllist at rt.cpan.org>, or through
+the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Enumerate-PerlList>.  I will be notified, and then you'll
 automatically be notified of progress on your bug as I make changes.
 
 
@@ -109,7 +128,7 @@ automatically be notified of progress on your bug as I make changes.
 
 You can find documentation for this module with the perldoc command.
 
-    perldoc Romanian::Person
+    perldoc Enumerate::PerlList
 
 
 You can also look for information at:
@@ -118,19 +137,19 @@ You can also look for information at:
 
 =item * RT: CPAN's request tracker (report bugs here)
 
-L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=Romanian-Person>
+L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=Enumerate-PerlList>
 
 =item * AnnoCPAN: Annotated CPAN documentation
 
-L<http://annocpan.org/dist/Romanian-Person>
+L<http://annocpan.org/dist/Enumerate-PerlList>
 
 =item * CPAN Ratings
 
-L<http://cpanratings.perl.org/d/Romanian-Person>
+L<http://cpanratings.perl.org/d/Enumerate-PerlList>
 
 =item * Search CPAN
 
-L<http://search.cpan.org/dist/Romanian-Person/>
+L<http://search.cpan.org/dist/Enumerate-PerlList/>
 
 =back
 
@@ -181,4 +200,4 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 =cut
 
-1; # End of Romanian::Person
+1; # End of Enumerate::PerlList

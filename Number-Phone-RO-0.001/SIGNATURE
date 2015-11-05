@@ -1,0 +1,43 @@
+This file contains message digests of all files listed in MANIFEST,
+signed via the Module::Signature module, version 0.79.
+
+To verify the content in this distribution, first make sure you have
+Module::Signature installed, then type:
+
+    % cpansign -v
+
+It will check each file's integrity, as well as the signature's
+validity.  If "==> Signature verified OK! <==" is not displayed,
+the distribution may already have been compromised, and you should
+not run its Makefile.PL or Build.PL.
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+SHA1 5dbac1093d7556284443f6fdd3b534fb705e367d Changes
+SHA1 0e95e590fd36229964b663ecb8889eed8497243b MANIFEST
+SHA1 3525adc218f0423c2cf432cb38543779ee1ca48c META.json
+SHA1 4bf395786e0543262f1a52f4b79b1ae55346d19e META.yml
+SHA1 68b74465068c16b0a125002083e0ac5b5dc58a13 Makefile.PL
+SHA1 c06f479280acde85779a98c20cdc78184cf99f8a README
+SHA1 bce2da728ed82d512336146c8d73477adb391415 lib/Number/Phone/RO.pm
+SHA1 26f04d0250318655651318852159aa9e2bd906e7 t/Number-Phone-RO.t
+SHA1 190939b33d26a5900164708c5b5fd550d3e853f0 t/perlcritic.t
+SHA1 19d48dc9cb1480e88ed2f0e34f6a97fea61f2bfc t/perlcriticrc
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1
+
+iQIcBAEBCgAGBQJVah3PAAoJEMoENb5ewbNiO4IQAIkKzr0JF1Un1IYBFbfUsK7O
+xVIpKSbkfL25pI7jUTd3D7KYalB/6RbVTEBbxalZ0oPN+hyNO8OmX/wHYyj2BW98
+wAomj6KCH/dFADo+FYqBC8MXWXcjRlown8bvYg7dtoN5wfFJB7SXE8HKAk+B+Ty/
+9JtX1u23WmzkPJsehvzQaif4dW7gBI8kqb3pvcc5HFGQBdvWiZCwGMilN713kNQZ
+XgblI1zJ5+lP/koAU0snhoGrTr/c07DzJYo5jgQANu5ZSEtRxrX636rzqO/BTFpD
+sYQUI+lZLgVs32GxwawKE2QumYnbkmx8V4IqQ0Wzx9QPiBsMrmT9BsuSocdT/GPl
+RKrZvOtc0QOIKPehbG4VXIqIaeWtDEn0k2+XJAVAfyyksD684UpAVOmrLhoFR4nn
+Bq67p3HLGrYs9DNyMb23hHPlNz1o3TYWHstYa56mi/F7lSQaf6EdElYNuKsl+imh
+nD9GzctH/pNo/uJZhZScKB1iDxoE6guQiP8McKU1BwXyoJ/lP2zUIOlNjHEgTic4
+endJbxJoHX/YQ4+/dY2u37rhesOyvB+3TwsYInHSGpvWGo/udqjvWdF0sT4Cn7fI
+tcCKAivkEknqPQTsSn+FBWdmT7exT80IF/VgC36g2zJ3ZUMB58ql+x2eFnbARHiT
+MzOCEeQ4jGjVDmGRLgC/
+=XUH4
+-----END PGP SIGNATURE-----

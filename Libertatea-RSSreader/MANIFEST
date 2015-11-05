@@ -1,0 +1,7 @@
+Changes
+Makefile.PL
+MANIFEST
+README
+t/Libertatea-RSSreader.t
+t/uselibertatea.plx
+lib/Libertatea/RSSreader.pm
