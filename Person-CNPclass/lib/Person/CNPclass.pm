@@ -4,20 +4,8 @@ use 5.018002;
 use strict;
 use warnings;
 use Carp;
-#THIS IS NO NEEDED----------------------------------------------------------
-#require Exporter;
-#our @ISA = qw(Exporter);
-# Items to export into callers namespace by default. Note: do not export
-# names by default without a very good reason. Use EXPORT_OK instead.
-# Do not simply export all your public functions/methods/constants.
-# This allows declaration	use Person::CNPclass ':all';
-# If you do not need this, moving things directly into @EXPORT or @EXPORT_OK
-# will save memory.
-#our %EXPORT_TAGS = ( 'all' => [ qw() ] );
-#our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
-#our @EXPORT = qw(	);
-#THIS IS NO NEEDED-------------------------------------------------------END
-our $VERSION = '0.01';
+
+our $VERSION = '0.02';
 
 #Class for storing data about a person:
 #	nume	Methods: getNume()	setNume()
@@ -37,15 +25,9 @@ my @Everyone;
 # The Constructor -------------------------------------------
 sub new {
 	my $class = shift;
-	my $self = {
-		_nume	=> shift,
-		_prenume=> shift,
-		_cnp	=> shift,
-		_nrTel	=> shift,
-		_email	=> shift,
-		};		# hash referance
+	my $self = {};		# hash referance
 	bless ($self, $class);	# Transformarea referintei in obiect
-	$self->_init;
+	$self->_init(@_);
 	return $self;		# We send object back
 	# Print all the values just for clarification--------------------------
 	print "Numele DVS. este : $self->{_nume}\n";
@@ -53,6 +35,11 @@ sub new {
 
 sub _init {
 	my $self = shift;
+	$self->{_nume}=shift;
+	$self->{_prenume}=shift;
+	$self->{_cnp}=shift;
+	$self->{_nrTel}=shift;
+	$self->{_email}=shift;
 	push @Everyone, $self;
 	carp "New object created";
 } 
