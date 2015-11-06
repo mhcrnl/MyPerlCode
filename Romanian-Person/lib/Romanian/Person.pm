@@ -10,12 +10,23 @@ Romanian::Person - The great new Romanian::Person!
 
 =head1 VERSION
 
+<<<<<<< HEAD
 <<<<<<< Upstream, based on origin/master
+=======
+<<<<<<< HEAD
+Version 0.01
+
+=cut
+
+our $VERSION = '0.01_01';
+=======
+>>>>>>> 8ab2b6dbd251534effb0f297dd4249ff531bab51
 Version 0.01_02
 
 =cut
 
 our $VERSION = '0.01_02';
+<<<<<<< HEAD
 =======
 Version 0.01
 
@@ -23,6 +34,9 @@ Version 0.01
 
 our $VERSION = '0.01_01';
 >>>>>>> befd7e6 Commit05/11/2015
+=======
+>>>>>>> 054b9bec6fc123a4b39e463d3ad736c5d5a7e1fb
+>>>>>>> 8ab2b6dbd251534effb0f297dd4249ff531bab51
 #---------------------------------------------------------------------------
 #	Call the _run() method if the module was called as a script
 #---------------------------------------------------------------------------
