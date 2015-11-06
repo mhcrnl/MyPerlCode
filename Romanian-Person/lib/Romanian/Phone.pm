@@ -1,7 +1,10 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Upstream, based on origin/master
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> origin/master
 #!/usr/bin/perl
 
 package Romanian::Phone;
@@ -13,7 +16,10 @@ use strict;
 #---------------------------------------------------------------------
 our @ISA = qw(Person);
 =======
+<<<<<<< HEAD
 >>>>>>> 8ab2b6dbd251534effb0f297dd4249ff531bab51
+=======
+>>>>>>> origin/master
 package Romanian::Phone;
 
 #use lib "/home/mhcrnl/MyPerlCode/Romanian-Person/lib/";
@@ -108,6 +114,7 @@ sub _run {
 	print $object1->Romanian::Phone::getPhoneNumber, "\n";		
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 #!/usr/bin/perl
 
@@ -181,3 +188,7 @@ sub _run {
 >>>>>>> 054b9bec6fc123a4b39e463d3ad736c5d5a7e1fb
 1;
 >>>>>>> 8ab2b6dbd251534effb0f297dd4249ff531bab51
+=======
+>>>>>>> 054b9bec6fc123a4b39e463d3ad736c5d5a7e1fb
+1;
+>>>>>>> origin/master
