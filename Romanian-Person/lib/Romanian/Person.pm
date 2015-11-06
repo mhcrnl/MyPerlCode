@@ -10,11 +10,19 @@ Romanian::Person - The great new Romanian::Person!
 
 =head1 VERSION
 
+<<<<<<< Upstream, based on origin/master
 Version 0.01_02
 
 =cut
 
 our $VERSION = '0.01_02';
+=======
+Version 0.01
+
+=cut
+
+our $VERSION = '0.01_01';
+>>>>>>> befd7e6 Commit05/11/2015
 #---------------------------------------------------------------------------
 #	Call the _run() method if the module was called as a script
 #---------------------------------------------------------------------------
