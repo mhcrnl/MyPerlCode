@@ -6,7 +6,7 @@ use warnings;
 use Carp;
 
 our $VERSION = '0.02';
-
+__PACKAGE__->_run unless caller();
 #Class for storing data about a person:
 #	nume	Methods: getNume()	setNume()
 #	prenume	Methods: getPrenume()	setPrenume()
@@ -20,7 +20,7 @@ our $VERSION = '0.02';
 
 # Preloaded methods go here.--------------------------------------------
 # Class atributes -------------------------------------------
-my @Everyone;
+#my @Everyone;
 
 # The Constructor -------------------------------------------
 sub new {
@@ -40,8 +40,8 @@ sub _init {
 	$self->{_cnp}=shift;
 	$self->{_nrTel}=shift;
 	$self->{_email}=shift;
-	push @Everyone, $self;
-	carp "New object created";
+	#push @Everyone, $self;
+	#carp "New object created";
 } 
 
 # Creating Methods (get//set) ----------------------------------------------------
@@ -120,13 +120,21 @@ sub afiseazaVersion {
 	print "Salut din ROMANIA!  This is version $VERSION of this upload script!\n";;
 	
 }
+
+sub _run {
+	my $myCNP = new Person::CNPclass("Mihai", "Cornel", "1750878909876", "0722196164", "mhcrnl\@gmail.com");
+	
+	print $myCNP->getNume()."\n";	
+	print $myCNP->getPrenume()."\n";
+	print $myCNP->getCNP()."\n";
+}	
 1;
 __END__
 # Below is stub documentation for your module. You'd better edit it!
 
 =head1 NAME
 
-Person::CNPclass is a class for storing data about a Person
+Person::CNPclass - Is a class for storing data about a Person.
 
 =head1 SYNOPSIS
 
@@ -159,19 +167,33 @@ More  examples in folder t
 
 Stub documentation for Person::CNPclass, created by h2xs.
 This module is a class and is use as it is.
+
 =head2 METHODS
-getNume()
-setNume()
-getPrenume()
-setPrenume()
-getCNP()
-setCNP()
-getNrTel()
-setNrTel()
+
+=head3 getNume()
+
+=head3 setNume($Str)
+
+=head3 getPrenume()
+
+=head3 setPrenume($Str)
+
+=head3 getCNP()
+
+=head3 setCNP($Str)
+
+=head3 getNrTel()
+
+=head3 setNrTel($Str)
+
+=head3 getEmail()
+
+=head3 setEmail($Str)
+
 =head1 ATENTION!!! Insert email with escape character:
 	mhcrnl\@gmail.com	
-getEmail()
-setEmail	
+
+	
 =head2 EXPORT
 
 None by default.
