@@ -1,0 +1,1 @@
+Aceasta este fila report.txt scrisa de Perl open()

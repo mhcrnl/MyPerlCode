@@ -5,5 +5,5 @@ use strict;
 use utf8;
 use lib "/home/mhcrnl/MyPerlCode/Libertatea-RSSreader/lib";
 
-use Libertatea::RSSreader qw(Afiseaza);
-Afiseaza;
+use Libertatea::RSSreader qw(Libertatea);
+Libertatea;

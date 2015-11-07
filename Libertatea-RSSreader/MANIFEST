@@ -4,4 +4,5 @@ MANIFEST
 README
 t/Libertatea-RSSreader.t
 t/uselibertatea.plx
+t/libertatea.txt
 lib/Libertatea/RSSreader.pm
